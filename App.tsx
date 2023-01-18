@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: 'blue',
+    color: '#fff',
+    fontFamily: 'Inter_800ExtraBold',
   }
 });
