@@ -7,6 +7,8 @@ import { Header } from "../components/Header";
 
 const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 const datesFromYearStart = generateRangeDatesFromYearStart();
+const minimunSummaryDatesSize = 18 * 5;
+const amountOfDaysToFill = minimunSummaryDatesSize - datesFromYearStart.length
 
 export function Home(){
   return(
@@ -32,7 +34,18 @@ export function Home(){
             <HabitDay key={date.toISOString()} />
           ))
         }
+        {
+        amountOfDaysToFill > 0 && Array
+          .from({ length: amountOfDaysToFill})
+          .map((_, index) => (
+            <View 
+              className="bg-zinc-900 rounded-lg border-2 m-1 border-zinc-800 opacity-40"
+              style={{width: DAY_SIZE, height: DAY_SIZE}}
+            />
+          ))
+        }
       </View>
+      
     </View>
   )
 }
